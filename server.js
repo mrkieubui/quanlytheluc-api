@@ -9,7 +9,9 @@ let mongoose = require('mongoose');
 let app = express();
 
 // Import routes
-let apiRoutes = require("./api-routes")
+let apiRoutes = require("./api-routes");
+var cors = require('cors');
+app.use(cors());
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true
@@ -39,8 +41,3 @@ app.use('/api', apiRoutes)
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
-
-
-
-
-
